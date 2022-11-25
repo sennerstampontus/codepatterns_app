@@ -1,0 +1,30 @@
+.icon-circle {
+     position: relative;
+     width: 36px;
+     height: 36px;
+     background: white;
+     border-radius: 50%;
+     box-shadow: 0px 0px 7px 2px #8888884f;
+     display: grid;
+     place-items: center;
+
+     &:hover {
+          cursor: pointer;
+     }
+
+     .notis-circle {
+          width: 16px;
+          height: 16px;
+          background: $notification-background;
+          border-radius: 50%;
+
+          position: absolute;
+          top: -8px;
+          left: 20px;
+
+          display: grid;
+          place-items: center;
+          color: white;
+          font-size: 11px;
+     }
+}

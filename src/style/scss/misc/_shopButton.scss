@@ -1,9 +1,14 @@
 .button-container {
      position: relative;
-
+     display: grid;
+     place-items: center;
      width: 188px;
      height: 60px;
      background: $active-color;
+
+     &:hover {
+          cursor: pointer;
+     }
 }
 
 .left-bottom-border {
@@ -41,4 +46,5 @@
 }
 .button-text {
      padding: 0.7em 2.5em;
+     color: white;
 }

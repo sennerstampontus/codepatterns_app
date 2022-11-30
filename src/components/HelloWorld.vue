@@ -2,7 +2,7 @@
      <div class="homeview-container">
           <div class="image-container">
                <img
-                    src="https://www.pngall.com/wp-content/uploads/5/Fashion-Model-Man-PNG-Image.png"
+                    src="https://img.freepik.com/free-photo/portrait-handsome-smiling-young-man-model-wearing-casual-summer-pink-clothes-fashion-stylish-man-posing_158538-5355.jpg?w=2000"
                     alt="Fashion-Model-Man-PNG-Image.png"
                />
           </div>
@@ -13,10 +13,11 @@
                     To 50% Off
                </h1>
                <p>Online shopping free home delivery over $100</p>
+               <shop-button-component />
           </div>
           <div class="image-container-right">
                <img
-                    src="https://www.pngkey.com/png/full/732-7320326_normani-kordei-png.png"
+                    src="https://img.freepik.com/premium-photo/studio-shot-restful-beautiful-caucasian-woman-sits-chair-wears-shirt-white-trousers-shoes_95891-1153.jpg?w=1380"
                     alt="Fashion-Model-Man-PNG-Image.png"
                />
           </div>
@@ -25,8 +26,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import ShopButtonComponent from './items/ShopButtonComponent.vue';
 
 export default defineComponent({
+     components: { ShopButtonComponent },
      name: 'HelloWorld',
      props: {
           msg: String,

@@ -1,0 +1,44 @@
+.button-container {
+     position: relative;
+
+     width: 188px;
+     height: 60px;
+     background: $active-color;
+}
+
+.left-bottom-border {
+     position: absolute;
+     top: 20%;
+     bottom: 55%;
+     left: 10px;
+     border-left: 2px solid white;
+}
+.left-top-border {
+     position: absolute;
+     top: 10px;
+     left: 5.3%;
+     right: 82.3%;
+     border-top: 2px solid white;
+}
+.right-bottom-border {
+     position: absolute;
+     left: 82.3%;
+     right: 5.3%;
+     bottom: 10px;
+     border-bottom: 2px solid white;
+}
+.right-top-border {
+     position: absolute;
+     top: 55%;
+     bottom: 20%;
+     right: 5.3%;
+
+     border-right: 2px solid white;
+}
+.template-box {
+     width: 180px;
+     height: 50px;
+}
+.button-text {
+     padding: 0.7em 2.5em;
+}

@@ -1,37 +1,36 @@
 <template>
      <div
-          class="button-container"
-          :class="`button-container-${buttonId}`"
+          class="button-container-qv"
+          :class="`button-container-qv-${buttonId}`"
           :style="`background:${color}`"
           :id="buttonId"
           @mouseover="animateIn"
           @mouseout="animateOut"
      >
           <div
-               class="left-bottom-border"
+               class="left-bottom-border-qv"
                :class="`left-bottom-border-${buttonId}`"
           ></div>
           <div
-               class="left-top-border"
+               class="left-top-border-qv"
                :class="`left-top-border-${buttonId}`"
           ></div>
           <div
-               class="right-bottom-border"
+               class="right-bottom-border-qv"
                :class="`right-bottom-border-${buttonId}`"
           ></div>
           <div
-               class="right-top-border"
+               class="right-top-border-qv"
                :class="`right-top-border-${buttonId}`"
           ></div>
           <div class="button-text">{{ buttonTitle }}</div>
      </div>
 </template>
-
 <script lang="ts">
 import { defineComponent } from 'vue';
 import gsap from 'gsap';
 export default defineComponent({
-     name: 'ShopButtonComponent',
+     name: 'QuickViewButtonComponent',
      props: {
           color: {
                type: String,
@@ -65,7 +64,7 @@ export default defineComponent({
                          `.left-top-border-${this.buttonId}`,
                          {
                               left: 30,
-                              right: 132.7,
+                              right: 185,
                          },
                          'start'
                     )
@@ -73,7 +72,7 @@ export default defineComponent({
                          `.right-bottom-border-${this.buttonId}`,
                          {
                               right: 30,
-                              left: 132.7,
+                              left: 185,
                          },
                          'start'
                     )
@@ -85,7 +84,7 @@ export default defineComponent({
                          'start'
                     )
                     .to(
-                         `.button-container-${this.buttonId}`,
+                         `.button-container-qv-${this.buttonId}`,
                          {
                               background: `${this.hoverColor}`,
                          },
@@ -106,7 +105,7 @@ export default defineComponent({
                          `.left-top-border-${this.buttonId}`,
                          {
                               left: 10,
-                              right: 153.724,
+                              right: 220,
                          },
                          'start'
                     )
@@ -114,7 +113,7 @@ export default defineComponent({
                          `.right-bottom-border-${this.buttonId}`,
                          {
                               right: 10,
-                              left: 154.724,
+                              left: 220,
                          },
                          'start'
                     )
@@ -126,7 +125,7 @@ export default defineComponent({
                          'start'
                     )
                     .to(
-                         `.button-container-${this.buttonId}`,
+                         `.button-container-qv-${this.buttonId}`,
                          {
                               background: `${this.color}`,
                          },

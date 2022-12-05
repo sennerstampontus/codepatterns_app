@@ -6,6 +6,7 @@
           :id="buttonId"
           @mouseover="animateIn"
           @mouseout="animateOut"
+          @click="openQuickView"
      >
           <div
                class="left-bottom-border-qv"
@@ -131,6 +132,9 @@ export default defineComponent({
                          },
                          'start'
                     );
+          },
+          openQuickView() {
+               this.$emit('open-quick-view');
           },
      },
 });

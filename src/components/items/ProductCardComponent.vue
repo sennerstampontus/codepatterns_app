@@ -6,7 +6,10 @@
      >
           <div class="card-image">
                <img :src="product?.itemImage" alt="" />
-               <div :class="`card-side-icons-${cardId}`">
+               <div
+                    class="card-side-icons"
+                    :class="`card-side-icons-${cardId}`"
+               >
                     <div class="icon-seperator">
                          <icon-component
                               icon="ph:heart-straight"
@@ -34,12 +37,16 @@
                     </div>
                </div>
 
-               <div :class="`card-button-container-${cardId}`">
+               <div
+                    class="card-button-container"
+                    :class="`card-button-container-${cardId}`"
+               >
                     <quick-view-button-component
                          button-title="Quick view"
                          button-id="quickview"
                          color="#ff7373"
                          hover-color="#ca5d5d"
+                         @open-quick-view="openQuickView(product)"
                     />
                </div>
                <div class="card-content-background">
@@ -66,15 +73,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 import { Icon } from '@iconify/vue';
 import gsap from 'gsap';
 import QuickViewButtonComponent from './QuickViewButtonComponent.vue';
 import IconComponent from './IconComponent.vue';
+import { IProduct } from '@/models/interfaces/ProductInterface';
 export default defineComponent({
      name: 'ProductCardComponent',
      components: { Icon, QuickViewButtonComponent, IconComponent },
-     props: { cardId: String, product: Object },
+     props: { cardId: String, product: Object as PropType<IProduct> },
 
      methods: {
           animateIn() {
@@ -124,6 +132,9 @@ export default defineComponent({
                          },
                          'start'
                     );
+          },
+          openQuickView(product?: IProduct) {
+               this.$emit('open', product);
           },
      },
 });

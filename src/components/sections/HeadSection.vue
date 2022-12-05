@@ -13,7 +13,11 @@
                     To 50% Off
                </h1>
                <p>Online shopping free home delivery over $100</p>
-               <shop-button-component button-title="Shop now" />
+               <shop-button-component
+                    button-title="Shop now"
+                    color="#ff7373"
+                    hover-color="#ca5d5d"
+               />
           </div>
           <div class="image-container-right">
                <img

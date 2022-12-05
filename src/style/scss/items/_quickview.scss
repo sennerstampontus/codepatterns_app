@@ -1,0 +1,125 @@
+.quick-view-backdrop {
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 5;
+
+     width: 100%;
+     height: 100%;
+     background: rgba(155, 138, 138, 0.658);
+}
+
+.quick-view-container {
+     width: 550px;
+     height: 850px;
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 11;
+
+     background: rgb(219, 210, 210);
+     border-radius: 5px;
+     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.432);
+     overflow: hidden;
+}
+.quick-view-title-toolbar {
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 12;
+     width: 100%;
+     height: 30px;
+     background: #925959;
+
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding-right: 1rem;
+     color: whitesmoke;
+
+     .quick-view-close {
+          font-size: 1.5rem;
+
+          &:hover {
+               cursor: pointer;
+          }
+     }
+
+     p {
+          text-align: center;
+          padding-left: 2rem;
+          color: rgb(218, 204, 204);
+     }
+}
+
+.quick-view-grid-container {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-template-rows: repeat(4, auto);
+     padding: 2rem;
+}
+.quick-view-image-container {
+     width: 100%;
+     height: auto;
+     grid-column: 1 / -1;
+     grid-row: 1;
+
+     img {
+          width: 100%;
+          max-height: 500px;
+          object-fit: cover;
+     }
+}
+
+p {
+     text-align: center;
+     grid-column: 1 / -1;
+     grid-row: 2;
+}
+
+.quick-view-rating-container {
+     text-align: center;
+     grid-column: 1 / -1;
+     grid-row: 2;
+     margin-top: 1rem;
+     padding: 1.2rem 1rem;
+     display: flex;
+     justify-content: center;
+
+     .card-ratings {
+          display: flex;
+          gap: 0.6rem;
+          color: $active-color;
+     }
+}
+.quick-view-description-container {
+     grid-column: 1 / -1;
+     grid-row: 3;
+}
+
+.quick-view-sizes-container {
+     grid-column: 1 / -1;
+     grid-row: 4;
+     display: grid;
+     place-items: center;
+}
+.quick-view-size-box-container {
+     display: flex;
+     gap: 0.7em;
+}
+.quick-view-size-box {
+     display: grid;
+     place-items: center;
+     width: 30px;
+     height: 30px;
+     border: 1px solid rgb(105, 105, 105);
+     border-radius: 2px;
+     transition: all 0.2s ease-in-out;
+}
+
+.isHover {
+     background: $active-color;
+     cursor: pointer;
+     transition: all 0.2s ease-in-out;
+}

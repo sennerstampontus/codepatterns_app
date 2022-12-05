@@ -36,35 +36,19 @@
           </div>
           <div class="quick-view-sizes-container">
                <div class="quick-view-size-box-container">
-                    <div
-                         class="quick-view-size-box"
-                         @mouseover="addClass($event)"
-                         @mouseout="removeClass($event)"
-                    >
-                         S
-                    </div>
-                    <div
-                         class="quick-view-size-box"
-                         @mouseover="addClass($event)"
-                         @mouseout="removeClass($event)"
-                    >
-                         M
-                    </div>
-                    <div
-                         class="quick-view-size-box"
-                         @mouseover="addClass($event)"
-                         @mouseout="removeClass($event)"
-                    >
-                         L
-                    </div>
-                    <div
-                         class="quick-view-size-box"
-                         @mouseover="addClass($event)"
-                         @mouseout="removeClass($event)"
-                    >
-                         XL
-                    </div>
+                    <size-box-component
+                         v-for="size in product?.sizes"
+                         :key="size"
+                         :size-name="size"
+                    />
                </div>
+          </div>
+          <div class="quick-view-colors-container">
+               <select name="color select" id="color-select">
+                    <option v-for="color in product?.colors" :key="color">
+                         {{ color }}
+                    </option>
+               </select>
           </div>
      </div>
 </template>
@@ -72,10 +56,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { Icon } from '@iconify/vue';
+import SizeBoxComponent from './SizeBoxComponent.vue';
 export default defineComponent({
      name: 'QuickViewComponent',
      props: { product: Object },
-     components: { Icon },
+     components: { Icon, SizeBoxComponent },
 
      methods: {
           close() {

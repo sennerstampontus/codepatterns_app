@@ -104,22 +104,17 @@ p {
      display: grid;
      place-items: center;
 }
-.quick-view-size-box-container {
+
+.quick-view-colors-container {
      display: flex;
-     gap: 0.7em;
-}
-.quick-view-size-box {
-     display: grid;
-     place-items: center;
-     width: 30px;
-     height: 30px;
-     border: 1px solid rgb(105, 105, 105);
-     border-radius: 2px;
-     transition: all 0.2s ease-in-out;
+     justify-content: center;
+     margin: 2rem;
+
+     select {
+          width: 40%;
+          text-align: center;
+          font-family: $primary-font;
+     }
 }
 
-.isHover {
-     background: $active-color;
-     cursor: pointer;
-     transition: all 0.2s ease-in-out;
-}
+@import './sizebox';

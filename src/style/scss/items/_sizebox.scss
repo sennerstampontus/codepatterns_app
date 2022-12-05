@@ -1,0 +1,22 @@
+.quick-view-size-box-container {
+     display: flex;
+     gap: 0.7em;
+}
+.quick-view-size-box {
+     display: grid;
+     place-items: center;
+     width: auto;
+     height: auto;
+     border: 1px solid rgb(105, 105, 105);
+     border-radius: 2px;
+     transition: all 0.2s ease-in-out;
+
+     padding: 0.2em 0.8em;
+}
+
+.isHover {
+     background: $active-color;
+     cursor: pointer;
+     transition: all 0.2s ease-in-out;
+     color: whitesmoke;
+}

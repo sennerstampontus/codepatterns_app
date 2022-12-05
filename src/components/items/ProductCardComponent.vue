@@ -65,7 +65,7 @@
                          </div>
                     </div>
                     <div class="card-price">
-                         {{ product?.currency }}{{ product?.price }}.00
+                         {{ product?.currency }}{{ product?.price }}
                     </div>
                </div>
           </div>
@@ -82,7 +82,7 @@ import { IProduct } from '@/models/interfaces/ProductInterface';
 export default defineComponent({
      name: 'ProductCardComponent',
      components: { Icon, QuickViewButtonComponent, IconComponent },
-     props: { cardId: String, product: Object as PropType<IProduct> },
+     props: { cardId: Number, product: Object as PropType<IProduct> },
 
      methods: {
           animateIn() {

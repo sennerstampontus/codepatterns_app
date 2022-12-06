@@ -64,9 +64,7 @@
                               />
                          </div>
                     </div>
-                    <div class="card-price">
-                         {{ product?.currency }}{{ product?.price }}
-                    </div>
+                    <div class="card-price">${{ product?.price }}</div>
                </div>
           </div>
      </div>

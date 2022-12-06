@@ -37,7 +37,7 @@
           <div class="quick-view-sizes-container">
                <div class="quick-view-size-box-container">
                     <size-box-component
-                         v-for="size in product?.sizes"
+                         v-for="size in product?.size"
                          :key="size"
                          :size-name="size"
                     />
@@ -45,7 +45,7 @@
           </div>
           <div class="quick-view-colors-container">
                <select name="color select" id="color-select">
-                    <option v-for="color in product?.colors" :key="color">
+                    <option v-for="color in product?.color" :key="color">
                          {{ color }}
                     </option>
                </select>

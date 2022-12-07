@@ -22,6 +22,10 @@
      border-radius: 5px;
      box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.432);
      overflow: hidden;
+
+     h4 {
+          padding-left: 2rem;
+     }
 }
 .quick-view-title-toolbar {
      position: absolute;
@@ -67,13 +71,13 @@
 
      img {
           width: 100%;
-          max-height: 500px;
+          max-height: 400px;
           object-fit: cover;
      }
 }
 
 p {
-     text-align: center;
+     text-align: start;
      grid-column: 1 / -1;
      grid-row: 2;
 }
@@ -85,7 +89,7 @@ p {
      margin-top: 1rem;
      padding: 1.2rem 1rem;
      display: flex;
-     justify-content: center;
+     justify-content: start;
 
      .card-ratings {
           display: flex;
@@ -107,7 +111,7 @@ p {
 
 .quick-view-colors-container {
      display: flex;
-     justify-content: center;
+     justify-content: start;
      margin: 2rem;
 
      select {

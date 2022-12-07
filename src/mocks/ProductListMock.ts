@@ -64,7 +64,7 @@ export const productlist: Array<IProduct> = [
           category: 'Sunglasses',
           rating: 4,
           itemImage:
-               'https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=1600',
+               'https://images.pexels.com/photos/255305/pexels-photo-255305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
      } as ISunglasses,
      {
           id: 5,

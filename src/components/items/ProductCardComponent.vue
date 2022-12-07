@@ -109,6 +109,7 @@ export default defineComponent({
           },
           animateOut() {
                const tl = gsap.timeline();
+               const test = 0;
 
                tl.add('start')
                     .to(

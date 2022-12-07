@@ -34,6 +34,7 @@
                     {{ product?.description }}
                </div>
           </div>
+          <h4>Specifications</h4>
           <div class="quick-view-sizes-container">
                <div class="quick-view-size-box-container">
                     <size-box-component
@@ -42,6 +43,14 @@
                          :size-name="size"
                     />
                </div>
+               <p v-if="product?.isPolorized">These glasses are polorized.</p>
+               <p v-if="product?.type">This clock is: {{ product?.type }}</p>
+               <p v-if="product?.wristband">
+                    Wristband: {{ product?.wristband }}
+               </p>
+               <p v-if="product?.isWaterproof != undefined">
+                    Waterproof: {{ product?.isWaterproof }}
+               </p>
           </div>
           <div class="quick-view-colors-container">
                <select name="color select" id="color-select">

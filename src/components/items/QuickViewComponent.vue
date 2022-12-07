@@ -14,50 +14,66 @@
                     <img :src="product?.itemImage" alt="" />
                </div>
 
-               <p>Ratings and Reviews</p>
-
-               <div class="quick-view-rating-container">
-                    <div class="card-ratings">
-                         <div
-                              class="card-ratings-container"
-                              v-for="number in product?.rating"
-                              :key="number"
-                         >
-                              <Icon
-                                   icon="material-symbols:star"
-                                   class="card-ratings-icon"
-                              />
-                         </div>
-                    </div>
-               </div>
                <div class="quick-view-description-container">
                     {{ product?.description }}
                </div>
           </div>
-          <h4>Specifications</h4>
           <div class="quick-view-sizes-container">
                <div class="quick-view-size-box-container">
+                    <p>Size:</p>
                     <size-box-component
                          v-for="size in product?.size"
                          :key="size"
                          :size-name="size"
                     />
                </div>
-               <p v-if="product?.isPolorized">These glasses are polorized.</p>
-               <p v-if="product?.type">This clock is: {{ product?.type }}</p>
-               <p v-if="product?.wristband">
-                    Wristband: {{ product?.wristband }}
-               </p>
-               <p v-if="product?.isWaterproof != undefined">
-                    Waterproof: {{ product?.isWaterproof }}
-               </p>
           </div>
           <div class="quick-view-colors-container">
+               Color:
                <select name="color select" id="color-select">
                     <option v-for="color in product?.color" :key="color">
                          {{ color }}
                     </option>
                </select>
+          </div>
+
+          <div class="quick-view-rating-container">
+               <p>Ratings and Reviews</p>
+
+               <div class="card-ratings">
+                    <div
+                         class="card-ratings-container"
+                         v-for="number in product?.rating"
+                         :key="number"
+                    >
+                         <Icon
+                              icon="material-symbols:star"
+                              class="card-ratings-icon"
+                         />
+                    </div>
+               </div>
+          </div>
+          <div class="specs-container">
+               <h4>Specifications</h4>
+
+               <p v-if="product?.sleeves">
+                    Sleeves: <span>{{ product?.sleeves }}</span>
+               </p>
+               <p v-if="product?.dressLength">
+                    Dress type: <span>{{ product?.dressLength }}</span>
+               </p>
+
+               <p v-if="product?.isPolorized">These glasses are polorized.</p>
+               <p v-if="product?.type">
+                    This clock is: <span>{{ product?.type }}</span>
+               </p>
+               <p v-if="product?.wristband">
+                    Wristband: <span>{{ product?.wristband }}</span>
+               </p>
+               <p v-if="product?.isWaterproof != undefined">
+                    Waterproof: <span v-if="product?.isWaterproof">Yes</span>
+                    <span v-else>No</span>
+               </p>
           </div>
      </div>
 </template>

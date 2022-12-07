@@ -19,8 +19,8 @@ export const productlist: Array<IProduct> = [
           price: 30,
           size: ['S', 'M', 'L', 'XL'],
           color: ['Red', 'Yellow', 'White'],
-          length: 'Long',
-          sleeves: 'None',
+          dressLength: 'Long dress',
+          sleeves: 'Long sleeves',
           category: 'Dresses',
           rating: 4,
           itemImage:
@@ -34,6 +34,7 @@ export const productlist: Array<IProduct> = [
           price: 53,
           size: ['S', 'M', 'L', 'XL'],
           color: ['Yellow', 'Red', 'White'],
+          sleeves: 'No sleeves',
           category: 'Blazers',
           rating: 5,
           itemImage:
@@ -72,9 +73,10 @@ export const productlist: Array<IProduct> = [
           description:
                'This autumn inspired long sleeve dress is a MUST when the leaves starting to fall.',
           price: 28,
-          sleeves: 'Long',
           size: ['S', 'M', 'L', 'XL'],
           color: ['Red', 'Yellow', 'White'],
+          sleeves: 'Long Sleeves',
+          dressLength: 'Long dress',
           category: 'Dresses',
           rating: 4,
           itemImage:
@@ -113,7 +115,7 @@ export const productlist: Array<IProduct> = [
           description: 'Woman? Want a nice looking watch from TH? Here it is!',
           price: 33,
           color: ['White', 'Pink', 'Black'],
-          type: 'Analog',
+          watchType: 'Analog',
           isWaterproof: false,
           wristband: 'Leather',
           category: 'Watches',

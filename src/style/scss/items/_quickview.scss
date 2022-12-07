@@ -22,10 +22,6 @@
      border-radius: 5px;
      box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.432);
      overflow: hidden;
-
-     h4 {
-          padding-left: 2rem;
-     }
 }
 .quick-view-title-toolbar {
      position: absolute;
@@ -88,25 +84,33 @@ p {
      grid-row: 2;
      margin-top: 1rem;
      padding: 1.2rem 1rem;
-     display: flex;
-     justify-content: start;
-
+     p {
+          margin-left: 1rem;
+     }
      .card-ratings {
           display: flex;
           gap: 0.6rem;
           color: $active-color;
+          margin-left: 3rem;
      }
 }
 .quick-view-description-container {
      grid-column: 1 / -1;
      grid-row: 3;
+     text-align: center;
 }
 
 .quick-view-sizes-container {
      grid-column: 1 / -1;
      grid-row: 4;
-     display: grid;
-     place-items: center;
+}
+
+.quick-view-size-box-container {
+     margin-left: 2rem;
+
+     p {
+          margin-right: 1rem;
+     }
 }
 
 .quick-view-colors-container {
@@ -118,7 +122,23 @@ p {
           width: 40%;
           text-align: center;
           font-family: $primary-font;
+          border-radius: 3px;
+          background: rgba(212, 202, 202, 0.836);
+          margin-left: 1rem;
      }
+}
+.specs-container {
+     h4 {
+          padding: 1rem 0;
+     }
+     p {
+          font-weight: 500;
+     }
+     span {
+          font-weight: 400;
+     }
+     text-align: start;
+     margin-left: 2rem;
 }
 
 @import './sizebox';

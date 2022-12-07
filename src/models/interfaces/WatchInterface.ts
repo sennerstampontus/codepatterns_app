@@ -2,7 +2,7 @@ import { IProduct } from './ProductInterface';
 
 export interface IWatch extends IProduct {
      isWaterproof: boolean;
-     type: string;
+     watchType: string;
      wristband: string;
      color: string[];
 }

@@ -5,6 +5,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import RoutersView from './views/RoutersView.vue';
+
 export default defineComponent({
      components: { RoutersView },
      name: 'App',

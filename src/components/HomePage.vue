@@ -18,7 +18,7 @@ export default defineComponent({
           DisplaySection,
           FeaturedProductsSection,
      },
-     name: 'HelloWorld',
+     name: 'HomePage',
      props: {
           msg: String,
      },

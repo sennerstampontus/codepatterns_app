@@ -6,4 +6,7 @@ export interface IProduct {
      category: string;
      rating: number;
      itemImage: string;
+     isOnSale: boolean;
+     saleProcent: number;
+     salePrice: number;
 }

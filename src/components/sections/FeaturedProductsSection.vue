@@ -28,6 +28,9 @@ import ProductCardComponent from '../items/ProductCardComponent.vue';
 import { productlist } from '@/mocks/ProductListMock';
 import QuickViewComponent from '../items/QuickViewComponent.vue';
 import { IProduct } from '@/models/interfaces/ProductInterface';
+import { IShoe } from '@/models/interfaces/ShoeInterface';
+import { IWatch } from '@/models/interfaces/WatchInterface';
+import { getAllProducts } from '@/methods/GetProducts';
 export default defineComponent({
      name: 'FeaturedProductsSection',
      components: { ProductCardComponent, QuickViewComponent },
@@ -42,11 +45,34 @@ export default defineComponent({
                product: {} as IProduct,
           };
      },
+     mounted() {
+          this.splitList();
+     },
      methods: {
           open(product: IProduct) {
                console.log(product);
                this.product = product;
                this.quickView = true;
+          },
+          async splitList() {
+               const products = await getAllProducts();
+               let shoes: IShoe[] = [];
+               let watches: IWatch[] = [];
+               products.forEach((element: IProduct) => {
+                    switch (element.category) {
+                         case 'Shoes':
+                              shoes.push(element as IShoe);
+                              break;
+                         case 'Watches':
+                              watches.push(element as IWatch);
+                              break;
+                         default:
+                              break;
+                    }
+               });
+
+               console.log(shoes);
+               console.log(watches);
           },
      },
 });

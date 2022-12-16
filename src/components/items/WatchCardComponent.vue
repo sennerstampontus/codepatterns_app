@@ -1,4 +1,4 @@
-<!-- To make it easier to understand what product to change and not violate the OCP(Open-Closed Principle), I've created differnet card components for tindividual categories.
+<!-- To make it easier to understand what product to change and not violate the OCP(Open-Closed Principle), I've created differnet card components for individual categories.
     So if there will be another category in the future, I don't have to change the already working cards.
     Also to fullfill SRP(Single Responsibility Principle), I choosed to follow SRP more than DRY(Don't Repeat Yourself) in this case. Because it makes the components more understandable.
 -->

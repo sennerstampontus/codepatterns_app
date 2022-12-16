@@ -3,7 +3,7 @@
           <div class="featured-section-title"><h3>Featured Products</h3></div>
           <div class="featured-products-container">
                <!-- Looping through the entire list of products and seperate them based on category.
-                    Makes it smoother and I don't have to repeat myself in this case. 
+                    Makes it smoother and I don't have to repeat myself in this case. With DRY in mind. 
                -->
                <div
                     class="feature-cards-contianer"
@@ -28,7 +28,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import ProductCardComponent from '../items/ProductCardComponent.vue';
 import { productlist } from '@/mocks/ProductListMock';
 import Shoes from '../items/ShoeCardComponent.vue';
 import Watches from '../items/WatchCardComponent.vue';
@@ -39,7 +38,6 @@ import { getWatches } from '@/methods/GetWatches';
 export default defineComponent({
      name: 'FeaturedProductsSection',
      components: {
-          ProductCardComponent,
           QuickViewComponent,
           Shoes,
           Watches,

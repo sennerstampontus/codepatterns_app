@@ -23,7 +23,7 @@ export const productlist: Array<IProduct> = [
           sleeves: 'Long sleeves',
           category: 'Dresses',
           rating: 4,
-          itemImage:
+          imageUrl:
                'https://images.pexels.com/photos/9558228/pexels-photo-9558228.jpeg?auto=compress&cs=tinysrgb&w=1600',
      } as IDress,
      {
@@ -37,7 +37,7 @@ export const productlist: Array<IProduct> = [
           sleeves: 'No sleeves',
           category: 'Blazers',
           rating: 5,
-          itemImage:
+          imageUrl:
                'https://images.pexels.com/photos/12887176/pexels-photo-12887176.jpeg?auto=compress&cs=tinysrgb&w=1600',
      } as IBlazer,
      {
@@ -50,7 +50,7 @@ export const productlist: Array<IProduct> = [
           color: ['Yellow', 'Red', 'White'],
           category: 'Shoes',
           rating: 3,
-          itemImage:
+          imageUrl:
                'https://images.pexels.com/photos/4046699/pexels-photo-4046699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
      } as IShoe,
      {
@@ -64,7 +64,7 @@ export const productlist: Array<IProduct> = [
           isPolorized: true,
           category: 'Sunglasses',
           rating: 4,
-          itemImage:
+          imageUrl:
                'https://images.pexels.com/photos/255305/pexels-photo-255305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
      } as ISunglasses,
      {
@@ -79,7 +79,7 @@ export const productlist: Array<IProduct> = [
           dressLength: 'Long dress',
           category: 'Dresses',
           rating: 4,
-          itemImage:
+          imageUrl:
                'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
      } as IDress,
      {
@@ -91,7 +91,7 @@ export const productlist: Array<IProduct> = [
           color: ['Red', 'Yellow', 'White'],
           category: 'T shirts',
           rating: 5,
-          itemImage:
+          imageUrl:
                'https://images.pexels.com/photos/428338/pexels-photo-428338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
      } as IClothes,
      {
@@ -106,7 +106,7 @@ export const productlist: Array<IProduct> = [
           strenght: ['-1', '0', '+1', '+2'],
           category: 'Sunglasses',
           rating: 3,
-          itemImage:
+          imageUrl:
                'https://images.pexels.com/photos/701877/pexels-photo-701877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
      } as ISunglasses,
      {
@@ -114,13 +114,12 @@ export const productlist: Array<IProduct> = [
           title: 'Tommy Hillfiger watch',
           description: 'Woman? Want a nice looking watch from TH? Here it is!',
           price: 33,
-          color: ['White', 'Pink', 'Black'],
           watchType: 'Analog',
           isWaterproof: false,
           wristband: 'Leather',
           category: 'Watches',
           rating: 4,
-          itemImage:
+          imageUrl:
                'https://images.pexels.com/photos/179909/pexels-photo-179909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
      } as IWatch,
 ];

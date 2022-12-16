@@ -1,18 +1,22 @@
 import { IProduct } from '@/models/interfaces/ProductInterface';
-import { IWatch } from '@/models/interfaces/WatchInterface';
 import { getShoes } from './GetShoes';
 import { getWatches } from './GetWatches';
 
+/* 
+     Due to SRP I extracted this method, as well as the methods that it's calling.
+     The only thing this method is doing is fetch all products and return a list of them.
+     With OCP in mind, this is the way I choosed to go.
+     If I wanted to get all products and add to the list of products,
+     it only takes to add the new end point/method to get the new category
+     and add [...newCategory]. Without having to change the working methods or lists.
+
+*/
+
 export const getAllProducts = async (): Promise<IProduct[]> => {
-     let products: IProduct[] = [];
      const shoes = await getShoes();
-     shoes.forEach((element: IProduct) => {
-          products.push(element);
-     });
      const watches = await getWatches();
-     watches.forEach((element: IWatch) => {
-          products.push(element);
-     });
+
+     let products: IProduct[] = [...shoes, ...watches];
 
      return products;
 };

@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { getAllProducts } from './methods/GetProducts';
 import RoutersView from './views/RoutersView.vue';
 
 export default defineComponent({

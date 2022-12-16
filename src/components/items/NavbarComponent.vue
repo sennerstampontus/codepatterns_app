@@ -3,9 +3,15 @@
           <div class="logo-container">
                <h1>Fixxo.</h1>
           </div>
+
+          <!-- This might not be applying to ant principle when working with routes.
+               But it was a nice experiment. I had DRY in mind and looped out all links from a seperate file
+               to not repeat the action of adding "<router-link>" and with almost the same line of code for multiple links. 
+          -->
+
           <div class="router-links">
                <div v-for="route in routes" :key="route.routeId">
-                    <router-link :to="route.route" active-class="link-active">{{
+                    <router-link :to="route.path" active-class="link-active">{{
                          route.linkTitle
                     }}</router-link>
                </div>
@@ -38,13 +44,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { UserRoutes } from '@/controllers/UserRoutes';
+import { routes } from '@/router';
 import IconComponent from './IconComponent.vue';
 export default defineComponent({
      components: { IconComponent },
      name: 'NavbarComponent',
      computed: {
           routes() {
-               return UserRoutes;
+               return routes;
           },
      },
 });

@@ -2,12 +2,16 @@
      <div class="featured-products-section">
           <div class="featured-section-title"><h3>Featured Products</h3></div>
           <div class="featured-products-container">
+               <!-- Looping through the entire list of products and seperate them based on category.
+                    Makes it smoother and I don't have to repeat myself in this case. 
+               -->
                <div
                     class="feature-cards-contianer"
-                    v-for="product in products"
+                    v-for="product in newProductList"
                     :key="product.id"
                >
-                    <product-card-component
+                    <component
+                         :is="product.category"
                          :product="product"
                          :cardId="product.id"
                          @open="open"
@@ -23,17 +27,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent } from 'vue';
 import ProductCardComponent from '../items/ProductCardComponent.vue';
 import { productlist } from '@/mocks/ProductListMock';
+import Shoes from '../items/ShoeCardComponent.vue';
+import Watches from '../items/WatchCardComponent.vue';
 import QuickViewComponent from '../items/QuickViewComponent.vue';
 import { IProduct } from '@/models/interfaces/ProductInterface';
-import { IShoe } from '@/models/interfaces/ShoeInterface';
-import { IWatch } from '@/models/interfaces/WatchInterface';
-import { getAllProducts } from '@/methods/GetProducts';
+import { getShoes } from '@/methods/GetShoes';
+import { getWatches } from '@/methods/GetWatches';
 export default defineComponent({
      name: 'FeaturedProductsSection',
-     components: { ProductCardComponent, QuickViewComponent },
+     components: {
+          ProductCardComponent,
+          QuickViewComponent,
+          Shoes,
+          Watches,
+     },
      computed: {
           products() {
                return productlist;
@@ -43,36 +53,28 @@ export default defineComponent({
           return {
                quickView: false,
                product: {} as IProduct,
+               newProductList: [] as any[],
           };
      },
      mounted() {
-          this.splitList();
+          this.combineList();
      },
      methods: {
-          open(product: IProduct) {
-               console.log(product);
+          open(product: any) {
                this.product = product;
                this.quickView = true;
           },
-          async splitList() {
-               const products = await getAllProducts();
-               let shoes: IShoe[] = [];
-               let watches: IWatch[] = [];
-               products.forEach((element: IProduct) => {
-                    switch (element.category) {
-                         case 'Shoes':
-                              shoes.push(element as IShoe);
-                              break;
-                         case 'Watches':
-                              watches.push(element as IWatch);
-                              break;
-                         default:
-                              break;
-                    }
-               });
 
-               console.log(shoes);
-               console.log(watches);
+          // This method combines the products to one list of products with the result from
+          // extracted methods "getShoes()" and "getWatches()".
+          // This way it can always easily be added more categories and be applied in this list.
+          async combineList() {
+               const shoes = await getShoes();
+               const watches = await getWatches();
+
+               const combinedList = [...shoes, ...watches];
+
+               this.newProductList = combinedList;
           },
      },
 });

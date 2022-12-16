@@ -1,3 +1,8 @@
+<!-- To make it easier to understand what product to change and not violate the OCP(Open-Closed Principle), I've created differnet card components for tindividual categories.
+    So if there will be another category in the future, I don't have to change the already working cards.
+    Also to fullfill SRP(Single Responsibility Principle), I choosed to follow SRP more than DRY(Don't Repeat Yourself) in this case. Because it makes the components more understandable.
+-->
+
 <template>
      <div
           class="featured-products-card"
@@ -5,7 +10,7 @@
           @mouseout="animateOut"
      >
           <div class="card-image">
-               <img :src="product?.imageUrl" alt="" />
+               <img :src="item.imageUrl" alt="" />
                <div
                     class="card-side-icons"
                     :class="`card-side-icons-${cardId}`"
@@ -46,16 +51,16 @@
                          button-id="quickview"
                          color="#ff7373"
                          hover-color="#ca5d5d"
-                         @open-quick-view="openQuickView(product)"
+                         @open-quick-view="openQuickView(item)"
                     />
                </div>
                <div class="card-content-background">
-                    <h3>{{ product?.category }}</h3>
-                    <h1>{{ product?.title }}</h1>
+                    <h3>{{ item.category }}</h3>
+                    <h1>{{ item.title }}</h1>
                     <div class="card-ratings">
                          <div
                               class="card-ratings-container"
-                              v-for="number in product?.rating"
+                              v-for="number in item.rating"
                               :key="number"
                          >
                               <Icon
@@ -64,7 +69,7 @@
                               />
                          </div>
                     </div>
-                    <div class="card-price">${{ product?.price }}</div>
+                    <div class="card-price">${{ item.price }}</div>
                </div>
           </div>
      </div>
@@ -76,12 +81,19 @@ import { Icon } from '@iconify/vue';
 import gsap from 'gsap';
 import QuickViewButtonComponent from './QuickViewButtonComponent.vue';
 import IconComponent from './IconComponent.vue';
-import { IProduct } from '@/models/interfaces/ProductInterface';
+import { IWatch } from '@/models/interfaces/WatchInterface';
 export default defineComponent({
-     name: 'ProductCardComponent',
+     name: 'WatchCardComponent',
      components: { Icon, QuickViewButtonComponent, IconComponent },
-     props: { cardId: Number, product: Object},
+     props: { cardId: String, product: Object as PropType<IWatch> },
+     computed: {
+          item(): IWatch {
+               if (this.product !== undefined) return this.product;
 
+               const item: any = {};
+               return item;
+          },
+     },
      methods: {
           animateIn() {
                const tl = gsap.timeline();
@@ -132,8 +144,8 @@ export default defineComponent({
                          'start'
                     );
           },
-          openQuickView(product?: IProduct) {
-               this.$emit('open', product);
+          openQuickView(item: IWatch) {
+               this.$emit('open', item);
           },
      },
 });

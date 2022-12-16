@@ -11,7 +11,7 @@
           </div>
           <div class="quick-view-grid-container">
                <div class="quick-view-image-container">
-                    <img :src="product?.itemImage" alt="" />
+                    <img :src="product?.imageUrl" alt="" />
                </div>
 
                <div class="quick-view-description-container">
@@ -56,24 +56,19 @@
           <div class="specs-container">
                <h4>Specifications</h4>
 
-               <p v-if="product?.sleeves">
-                    Sleeves: <span>{{ product?.sleeves }}</span>
-               </p>
-               <p v-if="product?.dressLength">
-                    Dress type: <span>{{ product?.dressLength }}</span>
-               </p>
-
-               <p v-if="product?.isPolorized">These glasses are polorized.</p>
-               <p v-if="product?.type">
-                    This clock is: <span>{{ product?.type }}</span>
-               </p>
-               <p v-if="product?.wristband">
-                    Wristband: <span>{{ product?.wristband }}</span>
-               </p>
-               <p v-if="product?.isWaterproof != undefined">
-                    Waterproof: <span v-if="product?.isWaterproof">Yes</span>
-                    <span v-else>No</span>
-               </p>
+               <div v-if="product?.category === 'Watches'">
+                    <p>
+                         Wristband: <span>{{ product?.wristband }}</span>
+                    </p>
+                    <p>
+                         Waterproof:
+                         <span v-if="product?.isWaterproof">Yes</span>
+                         <span v-else>No</span>
+                    </p>
+                    <p>
+                         This clock is: <span>{{ product?.watchType }}</span>
+                    </p>
+               </div>
           </div>
      </div>
 </template>

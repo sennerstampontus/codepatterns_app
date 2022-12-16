@@ -1,5 +1,4 @@
 import { ApplicationRoutes } from '@/models/ApplicationRoutes';
-import { IRoleRoutes } from '@/models/interfaces/IRoleRoutes';
 import HomeView from '@/views/HomeView.vue';
 
 // To fullfill the DRY principle regarding this experiment, I've made a type that takes in interface "Route" and the vue type "RouteRecordRaw".

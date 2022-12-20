@@ -7,7 +7,5 @@ import { IProduct } from './ProductInterface';
 // the properties this shoe has. Therefore IShoe interface.
 
 export interface IShoe extends IProduct {
-     size: number[];
-     color: string[];
      heels?: string;
 }

@@ -1,6 +1,12 @@
-<!-- To make it easier to understand what product to change and not violate the OCP(Open-Closed Principle), I've created differnet card components for individual categories.
+<!-- To make it easier to understand what product to change and not violate the OCP(Open-Closed Principle), I've created different card components for individual categories.
     So if there will be another category in the future, I don't have to change the already working cards.
-    Also to fullfill SRP(Single Responsibility Principle), I choosed to follow SRP more than DRY(Don't Repeat Yourself) in this case. Because it makes the components more understandable.
+    This makes it OCP. When the corresponding component is created and done, it's done, I don't have to change it.
+     
+    You could argue that it could be a repeated action. But I find this solution more efficient because it looks cleaner 
+     in the component, instead of having a lot of "v-if" etc. And I don't have to change a eg. "ProductCardComponent"
+     to match every product, which causes problems, if I add a new product that has more props than previous products.
+    Also to fullfill SRP(Single Responsibility Principle), I choosed to follow SRP more than DRY in this case. Because it makes the components more understandable.
+    It's only responsible for it's product type.
 -->
 
 <template>
@@ -69,7 +75,10 @@
                               />
                          </div>
                     </div>
-                    <div class="card-price">${{ item.price }}</div>
+                    <div class="card-price" v-if="!item.isOnSale">
+                         ${{ item.price }}
+                    </div>
+                    <div class="isOnSale" v-else>${{ item.salePrice }}</div>
                </div>
           </div>
      </div>

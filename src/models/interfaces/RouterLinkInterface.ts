@@ -1,4 +1,4 @@
-export interface Route {
+export interface IRouterLink {
      routeId: number;
      linkTitle: string;
 }
